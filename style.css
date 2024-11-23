@@ -1814,6 +1814,10 @@ span {
 }
 
 @media (max-width: 768px) {
+
+  .d-section{
+    border-radius: 30px;
+  }
   .section .section-wraper .details-card-wraper .details-card {
     width: 48%;
   }
@@ -1831,6 +1835,7 @@ span {
   }
   .items-wraper .item-section-heading-container .item-section-heading h2 {
     font-size: 6.2vw;
+    margin-bottom: 25px;
   }
 
   .items-wraper
@@ -1991,15 +1996,13 @@ span {
     margin-top: 15px;
     gap: 15px;
   }
-  .items-wraper
-    .item-section-heading-container
-    .item-section-sub-heading
-    .shop-btn
-    a
-    button {
-    font-size: 12px;
-    padding: 8px 35px;
+  .items-wraper .item-section-heading-container .item-section-sub-heading .shop-btn{
+    margin-top: 10px;
   }
+  .items-wraper .item-section-heading-container .item-section-sub-heading .shop-btn a button {
+    font-size: 10px;
+    padding: 7px 30px;
+}
   .testimonials-section .testimonial-heading h2 {
     font-size: 31px;
   }
@@ -2032,7 +2035,7 @@ span {
     justify-content: center;
   }
   .footer .footer-heading h1 {
-    font-size: 40px;
+    font-size: 35px;
   }
   .base-footer {
     gap: 10px;
