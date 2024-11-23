@@ -670,3 +670,53 @@ menuLinks.forEach((links)=>{
   })
   
 })
+
+const cursor = document.querySelector('.cursor');
+
+let mouseX = 0;
+let mouseY = 0;
+
+let currentX = 0;
+let currentY = 0;
+
+const speed = 0.1;
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.pageX;
+  mouseY = e.pageY;
+});
+function animateCursor() {
+  const deltaX = mouseX - currentX;
+  const deltaY = mouseY - currentY;
+  currentX += deltaX * speed;
+  currentY += deltaY * speed;
+  cursor.style.transform = `translate(-50%, -50%) translate(${currentX}px, ${currentY}px)`;
+  requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+document.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+  link.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+});
+
+let doc = document.querySelector('.main-container')
+
+doc.addEventListener('click',function(event){
+  let spark = document.createElement('div')
+  spark.classList.add('spark')
+  spark.style.top = `${event.pageY - doc.offsetTop}px`
+  spark.style.left = `${event.pageX - doc.offsetLeft}px`
+  spark.style.filter = `hue-rotate(${Math.random() * 360}deg)`
+  doc.appendChild(spark);
+
+  for (let i = 0; i <= 7; i++) {
+    let spans = document.createElement('span')
+    spans.style.transform = `rotate(${i * 45}deg)`
+    spark.appendChild(spans)
+  }
+
+  setTimeout(()=>{
+    spark.remove()
+  },600)
+})

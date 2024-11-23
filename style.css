@@ -22,7 +22,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #E5F1EB;
+  background: #e5f1eb;
   cursor: pointer;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -1814,8 +1814,7 @@ span {
 }
 
 @media (max-width: 768px) {
-
-  .d-section{
+  .d-section {
     border-radius: 30px;
   }
   .section .section-wraper .details-card-wraper .details-card {
@@ -1878,12 +1877,12 @@ span {
 }
 
 @media (max-width: 435px) {
-  .items-wraper{
+  .items-wraper {
     gap: 10px;
   }
   .items-wraper .item-two-container {
     gap: 10px;
-}
+  }
   .hero-section .heading h1 {
     font-size: 5vw;
   }
@@ -1996,13 +1995,21 @@ span {
     margin-top: 15px;
     gap: 15px;
   }
-  .items-wraper .item-section-heading-container .item-section-sub-heading .shop-btn{
+  .items-wraper
+    .item-section-heading-container
+    .item-section-sub-heading
+    .shop-btn {
     margin-top: 10px;
   }
-  .items-wraper .item-section-heading-container .item-section-sub-heading .shop-btn a button {
+  .items-wraper
+    .item-section-heading-container
+    .item-section-sub-heading
+    .shop-btn
+    a
+    button {
     font-size: 10px;
     padding: 7px 30px;
-}
+  }
   .testimonials-section .testimonial-heading h2 {
     font-size: 31px;
   }
@@ -2084,5 +2091,52 @@ span {
   }
   .menu-links-container ul li a {
     font-size: 9vw;
+  }
+}
+
+.cursor {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  z-index: 999999;
+  border: 1px solid #202020;
+  border-radius: 15px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: position 0.3s ease;
+}
+
+.spark{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: 9999999;
+  transform: translateY(-20px);
+}
+
+.spark span{
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  pointer-events: none;
+  transform-origin: bottom;
+  filter: drop-shadow(0 0 20px #0f0) drop-shadow(0 0 40px #0f0);
+}
+
+.spark span::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #0f0;
+  animation: ani 0.8s ease-in-out forwards ;
+}
+
+@keyframes ani {
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(700%);
   }
 }
