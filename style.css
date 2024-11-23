@@ -13,6 +13,26 @@ body {
   height: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #202020;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #E5F1EB;
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+/* ::selection {
+  background: ;
+  color: var(--primary-color);
+} */
+
 span {
   display: inline-block;
 }
@@ -962,6 +982,8 @@ span {
     margin-top: 30px;
     white-space: nowrap;
     padding-left: 10px;
+    overflow-x: scroll;
+    /* scrollbar-width: none; */
 
     img {
       display: inline-block;
@@ -1851,6 +1873,12 @@ span {
 }
 
 @media (max-width: 435px) {
+  .items-wraper{
+    gap: 10px;
+  }
+  .items-wraper .item-two-container {
+    gap: 10px;
+}
   .hero-section .heading h1 {
     font-size: 5vw;
   }

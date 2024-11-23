@@ -115,18 +115,18 @@ wrapper.addEventListener("mouseleave", autoPlay);
 
 let tl = gsap.timeline();
 
-gsap.to(".d-section .image-section img", {
-  transform: "translateX(-570%)",
-  scrollTrigger: {
-    trigger: ".d-section",
-    scroller: "body",
-    // markers: true,
-    start: "top 4%",
-    end: "top -200%",
-    scrub: 1,
-    pin: true,
-  },
-});
+// gsap.to(".d-section .image-section img", {
+//   transform: "translateX(-570%)",
+//   scrollTrigger: {
+//     trigger: ".d-section",
+//     scroller: "body",
+//     // markers: true,
+//     start: "top 4%",
+//     end: "top -200%",
+//     scrub: 1,
+//     pin: true,
+//   },
+// });
 
 const heading = document.querySelector(".hero-section .heading h1");
 const sub_heading = document.querySelector(".hero-section .sub-description p");
@@ -514,8 +514,8 @@ gsap.from(".footer .footer-heading h1 span", {
   ease: "power2.out",
   scrollTrigger: {
     trigger: ".footer",
-    start: "top 72%",
-    end: "top 47%",
+    start: "top 80%",
+    end: "top 60%",
     scrub: 2,
   },
 });
