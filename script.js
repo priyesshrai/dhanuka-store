@@ -602,76 +602,75 @@ tabs.forEach((tab) => {
   });
 });
 
+const menuTl = gsap.timeline();
 
+menuTl.to(".menu-links-container", {
+  delay: 0.3,
+  duration: 0.3,
+  clipPath: "circle(150% at 100% 0)",
+});
 
+menuTl.from(".menu-links-container ul li a", {
+  y: 100,
+  opacity: 0,
+  duration: 0.2,
+  delay: 0.15,
+  stagger: 0.2,
+});
+menuTl.from(".close-menu-btn-container", {
+  opacity: 0,
+  duration: 0.2,
+});
 
-const menuTl = gsap.timeline()
+menuTl.pause();
 
-menuTl.to(".menu-links-container",{
-  delay:0.3,
-  duration:0.3,
-  clipPath:"circle(150% at 100% 0)",
-})
+const menuBtnContainer = document.querySelector(".menu-btn-container");
+const menuBtn = document.querySelectorAll(
+  ".menu-btn-container .menu-btn-wraper .menu-btn"
+);
 
-menuTl.from(".menu-links-container ul li a",{
-  y:100,
-  opacity:0,
-  duration:0.2,
-  delay:0.15,
-  stagger:0.2
-})
-menuTl.from(".close-menu-btn-container",{
-  opacity:0,
-  duration:0.2,
-})
-
-menuTl.pause()
-
-
-const menuBtnContainer = document.querySelector('.menu-btn-container');
-const menuBtn = document.querySelectorAll('.menu-btn-container .menu-btn-wraper .menu-btn');
-
-const closeMenuBtn = document.querySelector(".close-menu-btn-container")
-const closeMenu = document.querySelectorAll('.close-menu-btn-container .close-menu-btn-wraper .close-menu-btn');
+const closeMenuBtn = document.querySelector(".close-menu-btn-container");
+const closeMenu = document.querySelectorAll(
+  ".close-menu-btn-container .close-menu-btn-wraper .close-menu-btn"
+);
 
 let hideMenu = true;
 
-menuBtnContainer.addEventListener('click', () => {
-  menuBtn.forEach(btn => {
-    btn.classList.add('active-btn');
+menuBtnContainer.addEventListener("click", () => {
+  menuBtn.forEach((btn) => {
+    btn.classList.add("active-btn");
   });
-  closeMenu.forEach(btn => {
-    btn.classList.remove('close-active-btn');
+  closeMenu.forEach((btn) => {
+    btn.classList.remove("close-active-btn");
   });
-  menuTl.play(); 
+  menuTl.play();
 });
 
-closeMenuBtn.addEventListener('click',()=>{
-  menuBtn.forEach(btn => {
-    btn.classList.remove('active-btn');
+closeMenuBtn.addEventListener("click", () => {
+  menuBtn.forEach((btn) => {
+    btn.classList.remove("active-btn");
   });
-  closeMenu.forEach(btn => {
-    btn.classList.add('close-active-btn');
+  closeMenu.forEach((btn) => {
+    btn.classList.add("close-active-btn");
   });
-  menuTl.reverse()
-})
+  menuTl.reverse();
+});
 
-const menuLinks = document.querySelectorAll(".menu-links-container ul li")
+const menuLinks = document.querySelectorAll(".menu-links-container ul li");
 
-menuLinks.forEach((links)=>{
-  links.addEventListener('click',()=>{
-    menuTl.reverse()
-    menuBtn.forEach(btn => {
-      btn.classList.remove('active-btn');
+menuLinks.forEach((links) => {
+  links.addEventListener("click", () => {
+    menuTl.reverse();
+    menuBtn.forEach((btn) => {
+      btn.classList.remove("active-btn");
     });
-    closeMenu.forEach(btn => {
-      btn.classList.remove('close-active-btn');
+    closeMenu.forEach((btn) => {
+      btn.classList.remove("close-active-btn");
     });
-  })
-  
-})
+  });
+});
 
-const cursor = document.querySelector('.cursor');
+const cursor = document.querySelector(".cursor");
 
 let mouseX = 0;
 let mouseY = 0;
@@ -680,7 +679,7 @@ let currentX = 0;
 let currentY = 0;
 
 const speed = 0.1;
-document.addEventListener('mousemove', (e) => {
+document.addEventListener("mousemove", (e) => {
   mouseX = e.pageX;
   mouseY = e.pageY;
 });
@@ -695,28 +694,34 @@ function animateCursor() {
 
 animateCursor();
 
-document.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-  link.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+document.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+  link.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
 });
 
-let doc = document.querySelector('.main-container')
+let doc = document.querySelector(".main-container");
 
-doc.addEventListener('click',function(event){
-  let spark = document.createElement('div')
-  spark.classList.add('spark')
-  spark.style.top = `${event.pageY - doc.offsetTop}px`
-  spark.style.left = `${event.pageX - doc.offsetLeft}px`
-  spark.style.filter = `hue-rotate(${Math.random() * 360}deg)`
+doc.addEventListener("click", function (event) {
+  let spark = document.createElement("div");
+  spark.classList.add("spark");
+  spark.style.top = `${event.pageY - doc.offsetTop}px`;
+  spark.style.left = `${event.pageX - doc.offsetLeft}px`;
+  spark.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
   doc.appendChild(spark);
 
   for (let i = 0; i <= 7; i++) {
-    let spans = document.createElement('span')
-    spans.style.transform = `rotate(${i * 45}deg)`
-    spark.appendChild(spans)
+    let spans = document.createElement("span");
+    spans.style.transform = `rotate(${i * 45}deg)`;
+    spark.appendChild(spans);
   }
 
-  setTimeout(()=>{
-    spark.remove()
-  },600)
-})
+  setTimeout(() => {
+    spark.remove();
+  }, 600);
+});
+
+// const scroll = new LocomotiveScroll({
+//   el: document.querySelector("[data-scroll-container]"),
+//   smooth: true,
+//   lerp: 0.1,
+// });
