@@ -1023,7 +1023,6 @@ span {
   }
 
   .wrapper {
-    max-width: 1100px;
     width: 100%;
     position: relative;
   }
@@ -1046,10 +1045,10 @@ span {
     transform: translateY(-50%) scale(0.85);
   }
   .wrapper i:first-child {
-    left: -22px;
+    left: 5px;
   }
   .wrapper i:last-child {
-    right: -22px;
+    right: 5px;
   }
   .wrapper .carousel {
     display: grid;
