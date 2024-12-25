@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&family=Qwitcher+Grypen&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&family=Qwitcher+Grypen&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -165,7 +165,6 @@ span {
         width: 100%;
         height: 100%;
         border-radius: 30px;
-        clip-path: polygon(0% 0%, 75% 0%, 100% 30.7%, 100% 100%, 0% 100%);
         background-color: rgb(152, 250, 217);
         overflow: hidden;
 
@@ -234,16 +233,18 @@ span {
 
       .first-card-btn {
         position: absolute;
-        width: 165px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         right: 0;
         top: 0;
-        clip-path: polygon(100% 0%, 100% 90%, 18% 0%);
         background-color: rgb(0, 0, 0);
         border-top-right-radius: 30px;
         display: flex;
         justify-content: end;
         align-items: baseline;
+        border-bottom-left-radius: 100px;
+        border-bottom: 5px solid white;
+        border-left: 5px solid white;
 
         .link-button-wraper {
           position: relative;
@@ -1696,9 +1697,6 @@ span {
   .hero-section .products-cards .first-card-wraper {
     width: 550px;
   }
-  .hero-section .products-cards .first-card-wraper .first-card-btn {
-    clip-path: polygon(100% 0%, 100% 90%, 25% 0%);
-  }
 }
 
 @media (max-width: 1046px) {
@@ -1729,17 +1727,11 @@ span {
     height: 238px;
   }
 
-  .hero-section .products-cards .first-card-wraper .first-card-btn {
-    clip-path: polygon(100% 0%, 100% 90%, 32% 0%);
-  }
 }
 
 @media (max-width: 945px) {
   .hero-section .products-cards .first-card-wraper {
     width: 100%;
-  }
-  .hero-section .products-cards .first-card-wraper .first-card-btn {
-    width: 295px;
   }
   .hero-section .heading h1 {
     font-size: 4.29vw;
@@ -1861,10 +1853,6 @@ span {
   .base-footer {
     gap: 15px;
   }
-
-  .hero-section .products-cards .first-card-wraper .first-card-btn {
-    width: 238px;
-  }
   .saree-section .left-section-wraper .left-section .left-section-heading h1 {
     font-size: 4vw;
   }
@@ -1890,17 +1878,12 @@ span {
   .hero-section .sub-description p {
     font-size: 3.4vw;
   }
-  .hero-section .products-cards .first-card-wraper .first-card-btn {
-    width: 152px;
-    height: 120px;
-  }
   .hero-section .products-cards .first-card-wraper {
     height: 350px;
   }
   .hero-section
     .products-cards
     .first-card-wraper
-    .first-card-btn
     .link-button-wraper {
     width: 40px;
     height: 40px;
